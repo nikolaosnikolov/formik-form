@@ -1,3 +1,3 @@
 # Formik Form
 ## What is this project?
-This form is made by using React and Formik which can easily handle all the files and structure. I also use it for making validation.
+This form is made by using React and Formik which can easily handle all the files and structure. I also use Formik for making validation. There are some rules given by instructions that are refering what the note after completing th input has to be. For instance, if I leave the password input empty, I will take a short notation that this field is required. Furthermore, if I put in the email input a value that is not an email (email: example@example.com), I will take a short notation that this filed must include an email.
