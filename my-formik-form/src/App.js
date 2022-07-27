@@ -14,7 +14,7 @@ function App() {
       let errors = {};
       if (!values.email) {
         errors.email = "Field required";
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+      } else if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email) === false) {
         errors.email = 'Username should be an email';
       }
       if (!values.password) errors.password = "Field required";
@@ -33,11 +33,13 @@ function App() {
           onChange={formik.handleChange}
           value={formik.values.email}
         />
-        {formik.errors.email ? (
-          <div id="emailError" style={{ color: "red" }}>
-            {formik.errors.email}
-          </div>
-        ) : null}
+        {formik.errors.email
+          ? (
+            <div id="emailError" style={{ color: "red" }}>
+              {formik.errors.email}
+            </div>
+          )
+          : null}
         <div>Password:</div>
         <input
           id="pswField"
@@ -47,11 +49,13 @@ function App() {
           value={formik.values.password}
         />
         <br />
-        {formik.errors.password ? (
-          <div id="pswError" style={{ color: "red" }}>
-            {formik.errors.password}
-          </div>
-        ) : null}
+        {formik.errors.password
+          ? (
+            <div id="pswError" style={{ color: "red" }}>
+              {formik.errors.password}
+            </div>
+          )
+          : null}
         <button id="submitBtn" type="submit">
           Submit
         </button>
